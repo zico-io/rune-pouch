@@ -16,6 +16,11 @@ dist-ssr
 .direnv
 .devenv
 
+# aws
+.amplify
+amplify_outputs*
+amplifyconfiguration*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
