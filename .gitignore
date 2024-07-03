@@ -15,6 +15,7 @@ dist-ssr
 # devenv
 .direnv
 .devenv
+.devenv.flake.nix
 
 # aws
 .amplify
