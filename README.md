@@ -1,3 +1,6 @@
+## Todo:
+- [ ] Switch AWS CI to use pnpm (lord help me)
+
 ## AWS Amplify React+Vite Starter Template
 
 This repository provides a starter template for creating applications using React+Vite and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
