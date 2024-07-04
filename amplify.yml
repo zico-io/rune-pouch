@@ -6,8 +6,8 @@ frontend:
         - npm install -g pnpm
     build:
       commands:
-        - npx pnpm install --frozen-lockfile
-        - npx pnpm run build
+        - pnpm install --frozen-lockfile
+        - pnpm run build
   artifacts:
     baseDirectory: dist
     files:
