@@ -7,7 +7,7 @@ frontend:
     build:
       commands:
         - pnpm install
-        - pnpm run dev
+        - pnpm run build
   artifacts:
     baseDirectory: dist
     files:
