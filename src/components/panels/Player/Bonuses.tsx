@@ -1,21 +1,22 @@
 import Grid from '@mui/material/Unstable_Grid2'
-import { Stack } from '@mui/system'
-import { OffensiveBonuses } from './bonuses/Offensive'
-import { DefensiveBonuses } from './bonuses/Defensive'
-import { MiscBonuses } from './bonuses/Misc'
+import { OffensiveBonuses, DefensiveBonuses, MiscBonuses } from './bonuses'
+import { Typography } from '@mui/material'
 
 export const BonusesCard = () => {
   return (
-    <Stack>
-      <Grid container spacing={1} columns={2}>
-        <Grid xs={1}>
-          <OffensiveBonuses />
-        </Grid>
-        <Grid xs={1}>
-          <DefensiveBonuses />
-        </Grid>
+    <Grid container columns={2}>
+      <Grid xs={1}>
+        <Typography variant='subtitle1' gutterBottom>Offense</Typography>
+        <OffensiveBonuses />
       </Grid>
-      <MiscBonuses />
-    </Stack>
+      <Grid xs={1}>
+        <Typography variant='subtitle1' gutterBottom>Defense</Typography>
+        <DefensiveBonuses />
+      </Grid>
+      <Grid xs={2}>
+        <Typography variant='subtitle1' gutterBottom>Other</Typography>
+        <MiscBonuses />
+      </Grid>
+    </Grid>
   )
 }

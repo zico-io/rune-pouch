@@ -105,11 +105,10 @@ const EquipmentSelect: React.FC = observer(() => {
   return (
     <ComboBox<EquipmentOption>
       id="equipment-select"
-      className="w-full"
       items={options}
       keepOpenAfterSelect
       keepPositionAfterSelect
-      placeholder="Search for equipment..."
+      placeholder="Search equipment..."
       onSelectedItemChange={(item) => {
         if (item) {
           store.updatePlayer({

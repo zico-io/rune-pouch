@@ -1,4 +1,4 @@
-import { IconButton } from '@mui/material'
+import { IconButton, Paper } from '@mui/material'
 import { PlayerEquipment } from '@/types/Player'
 import { getCdnImage } from '@/lib/utils'
 import { useStore } from '@/lib/state'
@@ -17,24 +17,26 @@ export const EquipmentGridSlot: React.FC<EquipmentGridSlotProps> = observer(
     const isEmpty = !currentSlot
 
     return (
-      <IconButton
-        sx={{ width: 48, height: 48, borderRadius: 1 }}
-        data-slot={slot}
-        data-tooltip-id="tooltip"
-        data-tooltip-content={currentSlot?.name}
-        onMouseDown={() => {
-          if (!isEmpty) store.clearEquipmentSlot(slot)
-        }}
-      >
-        {currentSlot?.image ? (
-          <img
-            src={getCdnImage(`equipment/${currentSlot.image}`)}
-            alt={currentSlot.name}
-          />
-        ) : (
-          placeholder && <img src={placeholder} alt={slot} draggable={false} />
-        )}
-      </IconButton>
+      <Paper elevation={0}>
+        <IconButton
+          sx={{ width: 48, height: 48, borderRadius: 1 }}
+          data-slot={slot}
+          data-tooltip-id="tooltip"
+          data-tooltip-content={currentSlot?.name}
+          onMouseDown={() => {
+            if (!isEmpty) store.clearEquipmentSlot(slot)
+          }}
+        >
+          {currentSlot?.image ? (
+            <img
+              src={getCdnImage(`equipment/${currentSlot.image}`)}
+              alt={currentSlot.name}
+            />
+          ) : (
+            placeholder && <img src={placeholder} alt={slot} draggable={false} />
+          )}
+        </IconButton>
+      </Paper>
     )
   },
 )

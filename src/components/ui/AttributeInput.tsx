@@ -2,6 +2,7 @@ import { Box, SxProps } from '@mui/system'
 import { NumberInput } from './NumberInput.tsx'
 import Grid from '@mui/material/Unstable_Grid2'
 import { Image } from 'mui-image'
+import { Paper } from '@mui/material'
 
 interface AttributeInputProps {
   name: string
@@ -26,33 +27,35 @@ export const AttributeInput: React.FC<AttributeInputProps> = ({
   sx,
 }) => {
   return (
-    <Grid container columns={2} sx={sx}>
-      <Grid xs={1}>
-        <Box sx={{ width: 24, height: 24 }}>
-          <Image src={image} alt={name} duration={600} fit="scale-down" />
-        </Box>
-      </Grid>
-      <Grid xs={1}>
-        {disabled ? (
-          <Box
-            sx={{
-              width: 1,
-              textAlign: 'left',
-              border: '1px gray',
-            }}
-          >
-            {value}
+    <Paper variant="outlined" sx={{ margin: 0.5 }}>
+      <Grid container columns={2} sx={sx} padding={1}>
+        <Grid xs={1} marginY="auto">
+          <Box sx={{ width: 24, height: 24 }}>
+            <Image src={image} alt={name} duration={600} fit="scale-down" />
           </Box>
-        ) : (
-          <NumberInput
-            min={min}
-            max={max}
-            value={value}
-            onChange={onChange}
-            step={step}
-          />
-        )}
+        </Grid>
+        <Grid xs={1} marginY="auto">
+          {disabled ? (
+            <Box
+              sx={{
+                width: 1,
+                textAlign: 'right',
+                border: '1px gray',
+              }}
+            >
+              {value}
+            </Box>
+          ) : (
+            <NumberInput
+              min={min}
+              max={max}
+              value={value}
+              onChange={onChange}
+              step={step}
+            />
+          )}
+        </Grid>
       </Grid>
-    </Grid>
+    </Paper>
   )
 }

@@ -1,17 +1,15 @@
 import { Card, CardContent, Stack } from '@mui/material'
-import { LoadoutMenu } from './LoadoutMenu'
 import { PlayerPanelNavigation } from './Navigation'
 
 export const PlayerPanel = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Card>
-      <CardContent>
-        <Stack spacing={1}>
-          <LoadoutMenu />
+    <Stack spacing={1}>
+      <Card>
+        <CardContent>
           {children}
-          <PlayerPanelNavigation />
-        </Stack>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+      <PlayerPanelNavigation />
+    </Stack>
   )
 }

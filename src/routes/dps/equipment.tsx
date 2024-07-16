@@ -1,30 +1,49 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Card, CardContent, Divider, Typography } from '@mui/material'
 import EquipmentSelect from '@components/panels/Player/equipment/Select'
 import { EquipmentGrid } from '@components/panels/Player/equipment/Grid'
-import { BonusesCard } from '@components/panels/Player/Bonuses'
 import Grid from '@mui/material/Unstable_Grid2'
+import { DefensiveBonuses, MiscBonuses, OffensiveBonuses } from '@/components/panels/Player/bonuses'
+import { Box, Stack, Typography } from '@mui/material'
+import { LoadoutMenu } from '@/components/panels/Player/LoadoutMenu'
 
 export const Route = createFileRoute('/dps/equipment')({
   component: () => {
     return (
-      <Card elevation={0} sx={{ overflow: 'visible' }}>
-        <CardContent>
-          <Typography variant="h5">Equipment</Typography>
-          <Divider />
-          <Grid container spacing={2}>
-            <Grid xs={4}>
-              <EquipmentSelect />
-            </Grid>
-            <Grid xs={4}>
+      <Stack>
+        <Typography variant="h5">Loadout Name</Typography>
+        <Typography variant="subtitle1" color="GrayText">Level 126</Typography>
+        <Grid container>
+          <Grid xs={6}>
+            <Box component="section" sx={{ p: 2 }}>
               <EquipmentGrid />
-            </Grid>
-            <Grid xs={4}>
-              <BonusesCard />
+            </Box>
+          </Grid>
+          <Grid xs={6}>
+            <Grid container columns={3} textAlign='center'>
+              <Grid xs={1}>
+                <Typography variant='subtitle1'>Offense</Typography>
+                <OffensiveBonuses />
+              </Grid>
+              <Grid xs={1}>
+                <Typography variant='subtitle1'>Defense</Typography>
+                <DefensiveBonuses />
+              </Grid>
+              <Grid xs={1}>
+                <Typography variant='subtitle1'>Other</Typography>
+                <MiscBonuses />
+              </Grid>
             </Grid>
           </Grid>
-        </CardContent>
-      </Card>
+        </Grid>
+        <Grid container columns={12} spacing={1}>
+          <Grid xs={7}>
+            <EquipmentSelect />
+          </Grid>
+          <Grid xs={5} marginLeft='auto'>
+            <LoadoutMenu />
+          </Grid>
+        </Grid>
+      </Stack>
     )
   },
 })

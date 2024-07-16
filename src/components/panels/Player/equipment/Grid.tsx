@@ -13,11 +13,11 @@ import { Stack } from '@mui/system'
 import { EquipmentGridSlot } from './GridSlot'
 
 export const EquipmentGrid: React.FC = () => (
-  <Stack>
+  <Stack spacing={0.5}>
     <Stack direction="row" justifyContent="center">
       <EquipmentGridSlot slot="head" placeholder={head} />
     </Stack>
-    <Stack direction="row" justifyContent="center">
+    <Stack direction="row" justifyContent="center" spacing={0.5}>
       <EquipmentGridSlot slot="cape" placeholder={cape} />
       <EquipmentGridSlot slot="neck" placeholder={neck} />
       <EquipmentGridSlot slot="ammo" placeholder={ammo} />

@@ -7,12 +7,12 @@ export const Route = createFileRoute('/dps')({
   component: () => {
     return (
       <Grid container spacing={2}>
-        <Grid xs={12} md={8}>
+        <Grid xs={12} md={7}>
           <PlayerPanel>
             <Outlet />
           </PlayerPanel>
         </Grid>
-        <Grid xs={12} md={4}>
+        <Grid xs={12} md={5}>
           <MonsterPanel />
         </Grid>
       </Grid>
