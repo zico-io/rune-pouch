@@ -1,15 +1,15 @@
-import dagger from '@public/img/bonuses/dagger.png'
-import scimitar from '@public/img/bonuses/scimitar.png'
-import warhammer from '@public/img/bonuses/warhammer.png'
-import magic from '@public/img/bonuses/magic.png'
-import ranged from '@public/img/bonuses/ranged.png'
+import dagger from '/img/bonuses/dagger.png'
+import scimitar from '/img/bonuses/scimitar.png'
+import warhammer from '/img/bonuses/warhammer.png'
+import magic from '/img/bonuses/magic.png'
+import ranged from '/img/bonuses/ranged.png'
 
 import { Stack } from '@mui/system'
-import { EquipmentBonuses } from '../../../../lib/Equipment'
-import { useStore } from '../../../../lib/state'
+import { EquipmentBonuses } from '@/lib/Equipment'
+import { useStore } from '@/lib/state'
 import { Typography } from '@mui/material'
 import { observer } from 'mobx-react-lite'
-import { AttributeInput } from '../../../ui/AttributeInput'
+import { AttributeInput } from '@components/ui/AttributeInput'
 
 export const DefensiveBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
   observer(({ computedStats }) => {
@@ -18,8 +18,8 @@ export const DefensiveBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
 
     return (
       <Stack spacing={1}>
-        <Typography variant="h6">Defensive</Typography>
-        <Stack spacing={1}>
+        <Typography variant="h6">Defense</Typography>
+        <Stack spacing={0.5}>
           <AttributeInput
             disabled={!prefs.manualMode}
             name="Stab"

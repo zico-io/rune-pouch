@@ -1,9 +1,8 @@
 import { observer } from 'mobx-react-lite'
-import { useStore } from '../../../lib/state'
+import { useStore } from '@/lib/state'
 import Grid from '@mui/material/Unstable_Grid2'
 import { FormControlLabel, FormGroup, Switch, Typography } from '@mui/material'
-import LazyImage from '../../ui/LazyImage'
-import { NumberInput } from '../../ui/NumberInput'
+import { NumberInput } from '@components/ui/NumberInput'
 
 export const SettingsPanel = observer(() => {
   const store = useStore()

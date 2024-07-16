@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
-import { useStore } from '../../../lib/state'
+import { useStore } from '@/lib/state'
 import { observer } from 'mobx-react-lite'
 
-import { Monster } from '../../../types/Monster'
-import { CUSTOM_MONSTER_BASE } from '../../../lib/Monsters'
-import Combobox from '../../ui/ComboBox'
+import { Monster } from '@/types/Monster'
+import { CUSTOM_MONSTER_BASE } from '@/lib/Monsters'
+import Combobox from '@components/ui/ComboBox'
 import { Edit } from '@mui/icons-material'
 
 interface MonsterOption {
@@ -14,7 +14,7 @@ interface MonsterOption {
   monster: Partial<Monster>
 }
 
-export const MonsterSelect: React.FC = observer(() => {
+export const MonsterSelect: React.FC = observer(( {children} ) => {
   const store = useStore()
   const { availableMonsters } = store
 
@@ -42,7 +42,7 @@ export const MonsterSelect: React.FC = observer(() => {
     <Combobox<MonsterOption>
       id="monster-select"
       items={options}
-      placeholder="Search for monster..."
+      placeholder={children}
       onSelectedItemChange={(item) => {
         if (item) store.updateMonster(item.monster)
       }}

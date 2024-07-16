@@ -1,7 +1,7 @@
 import { IconButton } from '@mui/material'
-import { PlayerEquipment } from '../../../../types/Player'
-import { getCdnImage } from '../../../../lib/utils'
-import { useStore } from '../../../../lib/state'
+import { PlayerEquipment } from '@/types/Player'
+import { getCdnImage } from '@/lib/utils'
+import { useStore } from '@/lib/state'
 import { observer } from 'mobx-react-lite'
 
 interface EquipmentGridSlotProps {

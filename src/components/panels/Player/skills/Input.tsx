@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite'
-import { PlayerSkills } from '../../../../types/Player'
-import { useStore } from '../../../../lib/state'
+import { PlayerSkills } from '@/types/Player'
+import { useStore } from '@/lib/state'
 import { useId } from 'react'
-import LazyImage from '../../../ui/LazyImage'
+import LazyImage from '@components/ui/LazyImage'
 import { Box, Paper, TextField, Typography } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 

@@ -1,6 +1,6 @@
-import { Monster } from '../../types/Monster'
-import { TOB_EM_MONSTER_IDS, TOB_MONSTER_IDS } from '../constants'
-import { Factor } from '../Math'
+import { Monster } from '@/types/Monster'
+import { TOB_EM_MONSTER_IDS, TOB_MONSTER_IDS } from '@/lib/constants'
+import { Factor } from '@/lib/Math'
 
 const ENTRY_MODE_SCALING: { [partySize: number]: Factor } = {
   1: [10, 40],

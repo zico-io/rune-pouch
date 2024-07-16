@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import { useStore } from '../../../../lib/state'
-import { Box, Divider, Stack } from '@mui/material'
+import { useStore } from '@/lib/state'
+import { Divider, Stack } from '@mui/material'
 import { observer } from 'mobx-react-lite'
 import { CombatStyle } from './Style'
 

@@ -1,6 +1,6 @@
 import { Box, Checkbox, ListItemText, MenuItem } from '@mui/material'
-import Potion from '../../../../enums/Potion'
-import LazyImage from '../../../ui/LazyImage'
+import Potion from '@/enums/Potion'
+import LazyImage from '@components/ui/LazyImage'
 import { observer } from 'mobx-react-lite'
 
 interface IBuffItemProps {

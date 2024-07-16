@@ -1,7 +1,7 @@
-import { Monster } from '../../types/Monster'
-import { P3_WARDEN_IDS } from '../../lib/constants'
-import { keys } from '../utils'
-import { MonsterAttribute } from '../../enums/MonsterAttribute'
+import { Monster } from '@/types/Monster'
+import { P3_WARDEN_IDS } from '@/lib/constants'
+import { keys } from '@/lib/utils'
+import { MonsterAttribute } from '@/enums/MonsterAttribute'
 
 const getDefenceFloor = (m: Monster): number => {
   if (m.name === 'Verzik Vitur' || m.name === 'Vardorvis') {

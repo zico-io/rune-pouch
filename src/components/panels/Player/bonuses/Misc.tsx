@@ -1,15 +1,15 @@
-import strength from '@public/img/bonuses/strength.png'
-import rangedStrength from '@public/img/bonuses/ranged_strength.png'
-import magicStrength from '@public/img/bonuses/magic_strength.png'
-import prayer from '@public/img/tabs/prayer.png'
+import strength from '/img/bonuses/strength.png'
+import rangedStrength from '/img/bonuses/ranged_strength.png'
+import magicStrength from '/img/bonuses/magic_strength.png'
+import prayer from '/img/tabs/prayer.png'
 
 import { Stack } from '@mui/system'
 import Grid from '@mui/material/Unstable_Grid2'
-import { EquipmentBonuses } from '../../../../lib/Equipment'
-import { useStore } from '../../../../lib/state'
+import { EquipmentBonuses } from '@/lib/Equipment'
+import { useStore } from '@/lib/state'
 import { Typography } from '@mui/material'
 import { observer } from 'mobx-react-lite'
-import { AttributeInput } from '../../../ui/AttributeInput'
+import { AttributeInput } from '@components/ui/AttributeInput'
 
 export const MiscBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
   observer(({ computedStats }) => {
@@ -21,7 +21,7 @@ export const MiscBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
         <Typography variant="h6">Other</Typography>
         <Grid container columns={2}>
           <Grid xs={1}>
-            <Stack spacing={1}>
+            <Stack spacing={0.5}>
               <AttributeInput
                 disabled={!prefs.manualMode}
                 name="Strength"
@@ -46,7 +46,7 @@ export const MiscBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
                 sx={{
                   backgroundColor:
                     player.bonuses.ranged_str !==
-                    computedStats?.bonuses.ranged_str
+                      computedStats?.bonuses.ranged_str
                       ? 'warn'
                       : 'Background',
                 }}
@@ -54,7 +54,7 @@ export const MiscBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
             </Stack>
           </Grid>
           <Grid xs={1}>
-            <Stack spacing={1}>
+            <Stack spacing={0.5}>
               <AttributeInput
                 disabled={!prefs.manualMode}
                 name="Magic Strength"
@@ -66,7 +66,7 @@ export const MiscBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
                 sx={{
                   backgroundColor:
                     player.bonuses.magic_str !==
-                    computedStats?.bonuses.magic_str
+                      computedStats?.bonuses.magic_str
                       ? 'warn'
                       : 'Background',
                 }}

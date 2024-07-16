@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite'
-import { Prayer, PrayerMap } from '../../../enums/Prayer'
-import { useStore } from '../../../lib/state'
+import { Prayer, PrayerMap } from '@/enums/Prayer'
+import { useStore } from '@/lib/state'
 import Grid from '@mui/material/Unstable_Grid2'
-import { GridItem } from '../../ui/GridItem'
+import { GridItem } from '@components/ui/GridItem'
 
 export const PrayersPanel = observer(() => {
   const store = useStore()

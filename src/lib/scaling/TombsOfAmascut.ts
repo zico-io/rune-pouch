@@ -2,8 +2,8 @@ import {
   TOA_WARDEN_CORE_EJECTED_IDS,
   TOMBS_OF_AMASCUT_MONSTER_IDS,
   TOMBS_OF_AMASCUT_PATH_MONSTER_IDS,
-} from '../constants'
-import { Monster } from '../../types/Monster'
+} from '@/lib/constants'
+import { Monster } from '@/types/Monster'
 
 const applyToaScaling = (m: Monster): Monster => {
   const { inputs } = m

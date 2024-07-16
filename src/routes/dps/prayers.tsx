@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Divider, Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
-import { PrayersPanel } from '../../components/panels/Prayer'
+import { PrayersPanel } from '@components/panels/Prayer'
 
 export const Route = createFileRoute('/dps/prayers')({
   component: () => {

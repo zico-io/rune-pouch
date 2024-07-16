@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Divider, Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
-import { SettingsPanel } from '../../components/panels/Settings'
+import { SettingsPanel } from '@components/panels/Settings'
 
 export const Route = createFileRoute('/dps/settings')({
   component: () => {

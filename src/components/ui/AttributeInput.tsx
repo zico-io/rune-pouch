@@ -26,13 +26,13 @@ export const AttributeInput: React.FC<AttributeInputProps> = ({
   sx,
 }) => {
   return (
-    <Grid container spacing={1} columns={2} sx={sx}>
+    <Grid container columns={2} sx={sx}>
       <Grid xs={1}>
         <Box sx={{ width: 24, height: 24 }}>
           <Image src={image} alt={name} duration={600} fit="scale-down" />
         </Box>
       </Grid>
-      <Grid xs={1} margin="auto">
+      <Grid xs={1}>
         {disabled ? (
           <Box
             sx={{

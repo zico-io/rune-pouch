@@ -1,16 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Autocomplete,
-  Stack,
   TextField,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
 import { VariableSizeList, ListChildComponentProps } from 'react-window'
-import { fontSize } from '@mui/system'
-import LazyImage from './LazyImage'
-import { getCdnImage } from '../../lib/utils'
 
 const LISTBOX_PADDING = 8
 

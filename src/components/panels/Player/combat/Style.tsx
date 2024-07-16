@@ -1,15 +1,14 @@
 import { toJS } from 'mobx'
 import isEqual from 'lodash.isequal'
-import { PlayerCombatStyle } from '../../../../types/PlayerCombatStyle'
+import { PlayerCombatStyle } from '@/types/PlayerCombatStyle'
 import { observer } from 'mobx-react-lite'
 import { useEffect, useState } from 'react'
-import { useStore } from '../../../../lib/state'
-import { EquipmentCategory } from '../../../../enums/EquipmentCategory'
-import { CombatStyleMap } from '../../../../lib/utils'
+import { useStore } from '@/lib/state'
+import { EquipmentCategory } from '@/enums/EquipmentCategory'
+import { CombatStyleMap } from '@/lib/utils'
 import { Box, Button, Stack, Typography } from '@mui/material'
 import Image from 'mui-image'
 import { CheckCircle, CheckCircleOutline } from '@mui/icons-material'
-import Grid from '@mui/material/Unstable_Grid2'
 
 interface CombatStyleProps {
   style: PlayerCombatStyle

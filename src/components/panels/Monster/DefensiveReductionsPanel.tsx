@@ -1,10 +1,10 @@
-import vuln from '@public/img/def_reductions/Vulnerability.png'
-import bgs from '@public/img/def_reductions/Bandos_godsword.webp'
-import sceptre from '@public/img/def_reductions/Accursed sceptre.png'
-import elderMaul from '@public/img/def_reductions/Elder_maul.png'
-import tonalztic from '@public/img/def_reductions/Tonalztics_of_ralos.png'
-import dwh from '@public/img/def_reductions/Dragon_warhammer.webp'
-import arc from '@public/img/def_reductions/Arclight.png'
+import vuln from '/img/def_reductions/Vulnerability.png'
+import bgs from '/img/def_reductions/Bandos_godsword.webp'
+import sceptre from '/img/def_reductions/Accursed sceptre.png'
+import elderMaul from '/img/def_reductions/Elder_maul.png'
+import tonalztic from '/img/def_reductions/Tonalztics_of_ralos.png'
+import dwh from '/img/def_reductions/Dragon_warhammer.webp'
+import arc from '/img/def_reductions/Arclight.png'
 
 import { ExpandMoreOutlined } from '@mui/icons-material'
 import {
@@ -16,9 +16,9 @@ import {
   Typography,
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
-import { useStore } from '../../../lib/state'
-import { NumberInput } from '../../ui/NumberInput'
-import LazyImage from '../../ui/LazyImage'
+import { useStore } from '@/lib/state'
+import { NumberInput } from '@components/ui/NumberInput'
+import LazyImage from '@components/ui/LazyImage'
 import { observer } from 'mobx-react-lite'
 
 // FIX: Incrementing the values breaks it

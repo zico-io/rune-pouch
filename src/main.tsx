@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { themeOptions } from "./lib/theme.ts";
-import { routeTree } from "./routeTree.gen.ts";
+import { themeOptions } from "@/lib/theme.ts";
+import { routeTree } from "@/routeTree.gen.ts";
 
 const theme = createTheme(themeOptions);
 

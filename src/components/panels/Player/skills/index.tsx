@@ -1,14 +1,14 @@
-import attack from '@public/img/bonuses/attack.png'
-import strength from '@public/img/bonuses/strength.png'
-import defence from '@public/img/bonuses/defence.png'
-import ranged from '@public/img/bonuses/ranged.png'
-import magic from '@public/img/bonuses/magic.png'
-import hitpoints from '@public/img/bonuses/hitpoints.png'
-import prayer from '@public/img/tabs/prayer.png'
-import mining from '@public/img/bonuses/mining.png'
+import attack from '/img/bonuses/attack.png'
+import strength from '/img/bonuses/strength.png'
+import defence from '/img/bonuses/defence.png'
+import ranged from '/img/bonuses/ranged.png'
+import magic from '/img/bonuses/magic.png'
+import hitpoints from '/img/bonuses/hitpoints.png'
+import prayer from '/img/tabs/prayer.png'
+import mining from '/img/bonuses/mining.png'
 
 import { observer } from 'mobx-react-lite'
-import { useStore } from '../../../../lib/state'
+import { useStore } from '@/lib/state'
 import {
   Box,
   FormControl,
@@ -19,9 +19,9 @@ import {
 import Grid from '@mui/material/Unstable_Grid2'
 import { Stack } from '@mui/material'
 import { PlayerSkillsInput } from './Input'
-import { PotionMap } from '../../../../lib/utils'
+import { PotionMap } from '@/lib/utils'
 import { BuffItem } from '../buffs/Item'
-import Potion from '../../../../enums/Potion'
+import Potion from '@/enums/Potion'
 import { UsernameLookup } from './Lookup'
 
 const ITEM_HEIGHT = 48

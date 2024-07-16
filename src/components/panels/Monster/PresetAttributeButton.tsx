@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
-import { MonsterAttribute } from '../../../enums/MonsterAttribute'
-import { useStore } from '../../../lib/state'
+import { MonsterAttribute } from '@/enums/MonsterAttribute'
+import { useStore } from '@/lib/state'
 import { observer } from 'mobx-react-lite'
 
 interface PresetAttributeButtonProps {

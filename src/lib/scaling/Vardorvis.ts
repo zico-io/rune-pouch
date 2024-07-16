@@ -1,5 +1,5 @@
-import { lerp } from '../Math'
-import { Monster } from '../../types/Monster'
+import { lerp } from '@/lib/Math'
+import { Monster } from '@/types/Monster'
 
 interface VardNumbers {
   maxHp: number

@@ -1,4 +1,4 @@
-import { Monster } from '../types/Monster'
+import { Monster } from '@/types/Monster'
 import applyCoxScaling from './scaling/ChambersOfXeric'
 import applyTobScaling from './scaling/TheatreOfBlood'
 import applyToaScaling from './scaling/TombsOfAmascut'

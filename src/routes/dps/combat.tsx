@@ -1,6 +1,6 @@
 import { Card, CardContent, Divider, Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
-import { CombatPanel } from '../../components/panels/Player/combat'
+import { CombatPanel } from '@components/panels/Player/combat'
 
 export const Route = createFileRoute('/dps/combat')({
   component: () => {

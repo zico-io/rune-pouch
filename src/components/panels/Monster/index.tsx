@@ -1,44 +1,40 @@
-import dagger from '@public/img/bonuses/dagger.png'
-import scimitar from '@public/img/bonuses/scimitar.png'
-import warhammer from '@public/img/bonuses/warhammer.png'
-import ranged_light from '@public/img/bonuses/ranged_light.webp'
-import ranged_standard from '@public/img/bonuses/ranged_standard.webp'
-import ranged_heavy from '@public/img/bonuses/ranged_heavy.webp'
-import magic from '@public/img/bonuses/magic.png'
-import ranged from '@public/img/bonuses/ranged.png'
-import hitpoints from '@public/img/bonuses/hitpoints.png'
-import attack from '@public/img/bonuses/attack.png'
-import strength from '@public/img/bonuses/strength.png'
-import defence from '@public/img/bonuses/defence.png'
-import mining from '@public/img/bonuses/mining.png'
-import magicStrength from '@public/img/bonuses/magic_strength.png'
-import rangedStrength from '@public/img/bonuses/ranged_strength.png'
-import toaRaidLevel from '@public/img/toa_raidlevel.webp'
-import raidsIcon from '@public/img/raids_icon.webp'
-import coxCmIcon from '@public/img/cox_challenge_mode.png'
+import dagger from '/img/bonuses/dagger.png'
+import scimitar from '/img/bonuses/scimitar.png'
+import warhammer from '/img/bonuses/warhammer.png'
+import ranged_light from '/img/bonuses/ranged_light.webp'
+import ranged_standard from '/img/bonuses/ranged_standard.webp'
+import ranged_heavy from '/img/bonuses/ranged_heavy.webp'
+import magic from '/img/bonuses/magic.png'
+import ranged from '/img/bonuses/ranged.png'
+import hitpoints from '/img/bonuses/hitpoints.png'
+import attack from '/img/bonuses/attack.png'
+import strength from '/img/bonuses/strength.png'
+import defence from '/img/bonuses/defence.png'
+// import mining from '/img/bonuses/mining.png'
+import magicStrength from '/img/bonuses/magic_strength.png'
+import rangedStrength from '/img/bonuses/ranged_strength.png'
+// import toaRaidLevel from '/img/toa_raidlevel.webp'
+// import raidsIcon from '/img/raids_icon.webp'
+// import coxCmIcon from '/img/cox_challenge_mode.png'
 import {
   Button,
   Card,
   CardContent,
-  Container,
-  Divider,
   Typography,
 } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
-import { SearchBar } from '../../ui/SearchBar'
-import { StatBox } from '../../ui/StatBox'
 import { Stack } from '@mui/system'
 import { AttributesPanel } from './AttributesPanel'
 import { DefensiveReductionsPanel } from './DefensiveReductionsPanel'
-import { AttributeInput } from '../../ui/AttributeInput'
+import { AttributeInput } from '@components/ui/AttributeInput'
 import { observer } from 'mobx-react-lite'
-import { useStore } from '../../../lib/state'
+import { useStore } from '@/lib/state'
 import { useMemo } from 'react'
 import { toJS } from 'mobx'
-import { scaleMonster } from '../../../lib/MonsterScaling'
+import { scaleMonster } from '@/lib/MonsterScaling'
 import { MonsterSelect } from './Select'
 import { Image } from 'mui-image'
-import { getCdnImage } from '../../../lib/utils'
+import { getCdnImage } from '@/lib/utils'
 import { GppBad } from '@mui/icons-material'
 
 export const MonsterPanel: React.FC = observer(() => {
@@ -61,7 +57,7 @@ export const MonsterPanel: React.FC = observer(() => {
             href={`https://oldschool.runescape.wiki/w/Special:Lookup?type=npc&id=${monster.id}`}
             sx={{ p: 1 }}
           >
-            <Grid container spacing={2} columns={4} marginRight="auto">
+            <Grid container spacing={2} columns={4}>
               <Grid>
                 <Card variant="outlined" sx={{ padding: '8px' }}>
                   {store.monster.image ? (
@@ -83,7 +79,7 @@ export const MonsterPanel: React.FC = observer(() => {
                   )}
                 </Card>
               </Grid>
-              <Stack margin="auto">
+              <Stack sx={{ padding: '8px' }}>
                 <Typography variant="subtitle2" color="GrayText">
                   {monster.version}
                 </Typography>

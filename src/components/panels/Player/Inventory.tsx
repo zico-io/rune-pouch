@@ -6,7 +6,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import { SearchBar } from "../../ui/SearchBar";
+import { SearchBar } from "@components/ui/SearchBar";
 
 export const PlayerInventory = () => {
   return (

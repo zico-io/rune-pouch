@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react'
-import { useStore } from '../../../../lib/state'
+import { useStore } from '@/lib/state'
 import { observer } from 'mobx-react-lite'
-import { getCdnImage } from '../../../../lib/utils'
-import { EquipmentPiece } from '../../../../types/Player'
-import LazyImage from '../../../../components/ui/LazyImage'
+import { getCdnImage } from '@/lib/utils'
+import { EquipmentPiece } from '@/types/Player'
+import LazyImage from '@components/ui/LazyImage'
 import { cross } from 'd3-array'
 import {
   availableEquipment,
   equipmentAliases,
   noStatExceptions,
-} from '../../../../lib/Equipment'
-import ComboBox from '../../../../components/ui/ComboBox'
+} from '@/lib/Equipment'
+import ComboBox from '@components/ui/ComboBox'
 
 interface EquipmentOption {
   label: string

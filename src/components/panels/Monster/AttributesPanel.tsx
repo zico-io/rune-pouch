@@ -5,7 +5,7 @@ import {
   AccordionSummary,
   Typography,
 } from '@mui/material'
-import { MonsterAttribute } from '../../../enums/MonsterAttribute'
+import { MonsterAttribute } from '@/enums/MonsterAttribute'
 import { PresetAttributeButton } from './PresetAttributeButton'
 import Grid from '@mui/material/Unstable_Grid2'
 

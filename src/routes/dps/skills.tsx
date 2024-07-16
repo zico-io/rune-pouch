@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Divider, Typography } from '@mui/material'
 import { createFileRoute } from '@tanstack/react-router'
-import { PlayerSkillsPanel } from '../../components/panels/Player/skills'
+import { PlayerSkillsPanel } from '@components/panels/Player/skills'
 
 export const Route = createFileRoute('/dps/skills')({
   component: () => {

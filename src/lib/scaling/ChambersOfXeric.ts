@@ -1,4 +1,4 @@
-import { MonsterAttribute } from '../../enums/MonsterAttribute'
+import { MonsterAttribute } from '@/enums/MonsterAttribute'
 import {
   ABYSSAL_PORTAL_IDS,
   GLOWING_CRYSTAL_IDS,
@@ -7,8 +7,8 @@ import {
   OLM_IDS,
   SCAVENGER_BEAST_IDS,
   TEKTON_IDS,
-} from '../../lib/constants'
-import { Monster } from '../../types/Monster'
+} from '@/lib/constants'
+import { Monster } from '@/types/Monster'
 
 const applyCoxScaling = (m: Monster): Monster => {
   const { inputs, attributes } = m
