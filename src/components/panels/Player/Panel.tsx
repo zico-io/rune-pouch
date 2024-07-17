@@ -3,13 +3,13 @@ import { PlayerPanelNavigation } from './Navigation'
 
 export const PlayerPanel = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Stack spacing={1}>
+    <Stack direction="row" spacing={1}>
+      <PlayerPanelNavigation />
       <Card>
         <CardContent>
           {children}
         </CardContent>
       </Card>
-      <PlayerPanelNavigation />
     </Stack>
   )
 }

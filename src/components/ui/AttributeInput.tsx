@@ -27,18 +27,18 @@ export const AttributeInput: React.FC<AttributeInputProps> = ({
   sx,
 }) => {
   return (
-    <Paper variant="outlined" sx={{ margin: 0.5 }}>
+    <Paper variant="outlined" sx={{ margin: 0.5, maxWidth: '98px' }}>
       <Grid container columns={2} sx={sx} padding={1}>
         <Grid xs={1} marginY="auto">
           <Box sx={{ width: 24, height: 24 }}>
             <Image src={image} alt={name} duration={600} fit="scale-down" />
           </Box>
         </Grid>
-        <Grid xs={1} marginY="auto">
+        <Grid xs={1} marginY="auto" paddingRight={1}>
           {disabled ? (
             <Box
               sx={{
-                width: 1,
+                minWidth: '28px',
                 textAlign: 'right',
                 border: '1px gray',
               }}
