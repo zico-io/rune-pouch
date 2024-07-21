@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router'
 
 export const PlayerPanelNavigation = () => {
   return (
-    <Stack spacing={1} display="flex" justifyContent="center">
+    <Stack direction="row" spacing={1} display="flex" justifyContent="center">
       <NavButton href="/dps/combat" icon="Combat_icon" />
       <NavButton href="/dps/skills" icon="Skills_icon" />
       <NavButton href="/dps/equipment" icon="Worn_equipment" />
