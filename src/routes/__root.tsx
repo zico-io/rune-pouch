@@ -3,8 +3,7 @@ import { createRootRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
   component: () => (
-    <Container fixed>
-      <h1>RUNE POUCH</h1>
+    <Container fixed sx={{ height: '100vh', overflowY: 'scroll', overflowX: 'hidden', scrollbarWidth: 'none' }}>
       <Outlet />
     </Container>
   ),
