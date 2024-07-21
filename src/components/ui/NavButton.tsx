@@ -5,9 +5,9 @@ export const NavButton = ({ href, icon }: { href: string; icon: string }) => {
   const link = `https://oldschool.runescape.wiki/images/${icon}.png`
 
   return (
-    <Link to={href}>
+    <Link to={href} preload="intent">
       {({ isActive }) => (
-        <Paper elevation={isActive ? 24 : 2}>
+        <Paper elevation={isActive ? 24 : 2} sx={{ boxShadow: 0 }}>
           <IconButton
             sx={{
               width: 48,
@@ -18,7 +18,6 @@ export const NavButton = ({ href, icon }: { href: string; icon: string }) => {
             <img src={link} />
           </IconButton>
         </Paper>
-
       )}
     </Link>
   )
