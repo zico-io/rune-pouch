@@ -6,11 +6,14 @@ import tonalztic from '/img/def_reductions/Tonalztics_of_ralos.png'
 import dwh from '/img/def_reductions/Dragon_warhammer.webp'
 import arc from '/img/def_reductions/Arclight.png'
 
-import { ExpandMoreOutlined } from '@mui/icons-material'
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import MuiAccordionSummary, {
+  AccordionSummaryProps,
+} from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import { styled } from '@mui/material/styles'
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Stack,
   Switch,
   Typography,
@@ -23,6 +26,42 @@ import { observer } from 'mobx-react-lite'
 
 // FIX: Incrementing the values breaks it
 
+const Accordion = styled((props: AccordionProps) => (
+  <MuiAccordion disableGutters elevation={0} {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  '&:not(:last-child)': {
+    borderBottom: 0,
+  },
+  '&::before': {
+    display: 'none',
+  },
+}));
+
+const AccordionSummary = styled((props: AccordionSummaryProps) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(255, 255, 255, .05)'
+      : 'rgba(0, 0, 0, .03)',
+  flexDirection: 'row-reverse',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(90deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: '1px solid rgba(0, 0, 0, .125)',
+}));
+
 export const DefensiveReductionsPanel: React.FC = observer(() => {
   const store = useStore()
   const { defenceReductions } = store.monster.inputs
@@ -31,10 +70,9 @@ export const DefensiveReductionsPanel: React.FC = observer(() => {
     <Accordion elevation={0}>
       <AccordionSummary
         aria-controls="defensive-reductions-panel-content"
-        expandIcon={<ExpandMoreOutlined />}
         id="defensive-reductions-header"
       >
-        <Typography variant="h5">Defensive Reductions</Typography>
+        <Typography>Reductions</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Stack spacing={1} paddingRight={1}>
