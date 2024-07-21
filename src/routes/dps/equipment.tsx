@@ -3,7 +3,7 @@ import EquipmentSelect from '@components/panels/Player/equipment/Select'
 import Grid from '@mui/material/Unstable_Grid2'
 import { EquipmentGrid } from '@components/panels/Player/equipment/Grid'
 import { DefensiveBonuses, MiscBonuses, OffensiveBonuses } from '@/components/panels/Player/bonuses'
-import { Box, CardContent, Divider, IconButton, Stack, Typography } from '@mui/material'
+import { CardContent, Divider, IconButton, Stack, Typography } from '@mui/material'
 import { DeleteOutline } from '@mui/icons-material'
 
 export const Route = createFileRoute('/dps/equipment')({
