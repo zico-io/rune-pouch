@@ -1,24 +1,31 @@
 import { createFileRoute } from '@tanstack/react-router'
 import EquipmentSelect from '@components/panels/Player/equipment/Select'
-import { EquipmentGrid } from '@components/panels/Player/equipment/Grid'
 import Grid from '@mui/material/Unstable_Grid2'
+import { EquipmentGrid } from '@components/panels/Player/equipment/Grid'
 import { DefensiveBonuses, MiscBonuses, OffensiveBonuses } from '@/components/panels/Player/bonuses'
-import { Box, Card, CardContent, Stack, Typography } from '@mui/material'
-import { LoadoutMenu } from '@/components/panels/Player/LoadoutMenu'
+import { Box, CardContent, Divider, IconButton, Stack, Typography } from '@mui/material'
+import { DeleteOutline } from '@mui/icons-material'
 
 export const Route = createFileRoute('/dps/equipment')({
   component: () => {
     return (
-      <Card>
-        <CardContent>
-          <Stack>
-            <Typography variant="h5">Loadout Name</Typography>
-            <Typography variant="subtitle1" color="GrayText">Level 126</Typography>
-            <Stack direction="row">
-              <Box component="section" sx={{ p: 2 }}>
-                <EquipmentGrid />
-              </Box>
-              <Stack direction="row" textAlign="center">
+      <CardContent>
+        <Stack spacing={1}>
+          <Grid container>
+            <Grid xs="auto">
+              <Typography variant="subtitle1" color="GrayText">Level 126</Typography>
+              <Typography variant="h5">Loadout Name</Typography>
+            </Grid>
+            <Grid xs={1} margin="auto" marginRight={0}>
+              <IconButton>
+                <DeleteOutline sx={{ opacity: 0.2 }} />
+              </IconButton>
+            </Grid>
+          </Grid>
+          <Divider variant="middle" sx={{ marginBottom: 2 }} />
+          <Stack direction="row" marginY="auto" spacing={2} >
+            <Stack spacing={1}>
+              <Stack direction="row" textAlign="center" justifyContent="center">
                 <Stack>
                   <Typography variant='subtitle1'>Offense</Typography>
                   <OffensiveBonuses />
@@ -32,18 +39,14 @@ export const Route = createFileRoute('/dps/equipment')({
                   <MiscBonuses />
                 </Stack>
               </Stack>
+            </Stack >
+            <Stack spacing={1}>
+              <EquipmentGrid />
             </Stack>
-            <Grid container columns={12} spacing={1}>
-              <Grid xs={7}>
-                <EquipmentSelect />
-              </Grid>
-              <Grid xs={5} marginLeft='auto'>
-                <LoadoutMenu />
-              </Grid>
-            </Grid>
           </Stack>
-        </CardContent>
-      </Card>
+          <EquipmentSelect />
+        </Stack >
+      </CardContent >
     )
   },
 })
