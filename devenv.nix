@@ -17,5 +17,7 @@
     clear
     echo $GREET
     devenv info
+    git remote update
+    git status -uno
   '';
 }
