@@ -22,7 +22,6 @@ import { PlayerSkillsInput } from './Input'
 import { PotionMap } from '@/lib/utils'
 import { BuffItem } from '../buffs/Item'
 import Potion from '@/enums/Potion'
-import { UsernameLookup } from './Lookup'
 
 const ITEM_HEIGHT = 48
 const ITEM_PADDING_TOP = 8
@@ -34,17 +33,14 @@ const MenuProps = {
   },
 }
 
-export const PlayerSkillsPanel: React.FC = observer(() => {
+export const SkillsPanel = observer(() => {
   const store = useStore()
   const { player } = store
 
   return (
-    <Stack spacing={2} marginTop={1}>
-      <Box alignItems="center">
-        <UsernameLookup />
-      </Box>
+    <Stack spacing={1}>
       <Box>
-        <Grid container spacing={1} columns={2}>
+        <Grid container columns={2}>
           <PlayerSkillsInput name="Attack" field="atk" image={attack} />
           <PlayerSkillsInput name="Strength" field="str" image={strength} />
           <PlayerSkillsInput name="Defence" field="def" image={defence} />
