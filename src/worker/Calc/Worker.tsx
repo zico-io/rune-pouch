@@ -9,7 +9,6 @@ import {
   WorkerRequestType,
 } from '@/worker/CalcWorkerTypes'
 import { Debouncer, DeferredPromise } from '@/utils'
-import React, { createContext, useContext, useEffect, useState } from 'react'
 
 export class CalcWorker {
   private static SELF_ID: number = 0
@@ -119,21 +118,5 @@ export class CalcWorker {
   }
 }
 
-const CalcContext = createContext<CalcWorker>(
-  // no default context is available, since we can't register a teardown method without useEffect
-  undefined as unknown as CalcWorker,
-)
 
-export const CalcProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [worker] = useState<CalcWorker>(new CalcWorker())
-  useEffect(() => {
-    worker.initWorker()
-    return () => worker.shutdown()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <CalcContext.Provider value={worker}>{children}</CalcContext.Provider>
-}
-
-export const useCalc = () => useContext(CalcContext)
