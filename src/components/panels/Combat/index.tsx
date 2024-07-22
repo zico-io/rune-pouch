@@ -26,10 +26,9 @@ export const CombatPanel: React.FC = observer(() => {
   )
 
   return (
-    <Stack spacing={2} marginTop={1}>
+    <Stack spacing={2}>
       <Stack divider={<Divider flexItem />}>
         {styles}
-        <Divider />
       </Stack>
     </Stack>
   )
