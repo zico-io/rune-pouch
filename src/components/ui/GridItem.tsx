@@ -21,15 +21,22 @@ export const GridItem: React.FC<IGridItemProps<number>> = observer(
           type="button"
           onClick={() => onClick(item)}
           style={{
-            width: 36,
-            height: 36,
+            position: 'relative',
+            width: 48,
+            height: 48,
+            cursor: 'pointer',
+            background: 'transparent',
+            border: 'none',
+            borderRadius: '4px',
+            backgroundColor: (active ? '#3e3e3e' : '#2c2c2c')
+          }}
+        >
+          {active && <CheckCircle width={5} sx={{ position: 'absolute', top: -6, right: -6 }} />}
+          <div style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-          }}
-        >
-          <div style={{ position: 'relative', margin: 'auto' }}>
-            {active && <CheckCircle width={5} />}
+          }}>
             <LazyImage src={image} alt={name} />
           </div>
         </button>
