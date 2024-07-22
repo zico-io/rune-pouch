@@ -1,7 +1,7 @@
 import { Stack, Typography } from "@mui/material"
-export { OffensiveBonuses } from './Offensive'
-export { DefensiveBonuses } from './Defensive'
-export { MiscBonuses } from './Misc'
+import { OffensiveBonuses } from './Offensive'
+import { DefensiveBonuses } from './Defensive'
+import { MiscBonuses } from './Misc'
 
 export const BonusesPanel = () => {
   return (
