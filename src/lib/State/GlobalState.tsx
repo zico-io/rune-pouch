@@ -6,7 +6,6 @@ import {
   reaction,
   toJS,
 } from 'mobx'
-import React, { createContext, useContext } from 'react'
 import { PartialDeep } from 'type-fest'
 import * as localforage from 'localforage'
 import {
@@ -20,7 +19,6 @@ import {
 } from '@/types/State'
 import merge from 'lodash.mergewith'
 import {
-  EquipmentPiece,
   Player,
   PlayerEquipment,
   PlayerSkills,
@@ -38,14 +36,12 @@ import {
   ComputeBasicRequest,
   ComputeReverseRequest,
   WorkerRequestType,
-} from '@/worker/CalcWorkerTypes'
+} from '@/worker/Calc/Types'
 import { getMonsters, INITIAL_MONSTER_INPUTS } from '@/lib/Monsters'
 import {
-  availableEquipment,
   calculateEquipmentBonusesFromGear,
 } from '@/lib/Equipment'
-import { CalcWorker } from '@/worker/CalcWorker'
-import { spellByName } from '@/types/Spell'
+import { CalcWorker } from '@/worker/Calc'
 import { EquipmentCategory } from '@/enums/EquipmentCategory'
 import {
   ARM_PRAYERS,
@@ -57,113 +53,12 @@ import {
 } from '@/enums/Prayer'
 import Potion from '@/enums/Potion'
 import { WikiSyncer, startPollingForRuneLite } from '@/wikisync/WikiSyncer'
+import { generateEmptyPlayer } from "./GenerateEmptyPlayer"
+import { parseLoadoutsFromImportedData } from './ParseLoadouts'
 
 const EMPTY_CALC_LOADOUT = {} as CalculatedLoadout
 
-const generateInitialEquipment = () => {
-  const initialEquipment: PlayerEquipment = {
-    ammo: null,
-    body: null,
-    cape: null,
-    feet: null,
-    hands: null,
-    head: null,
-    legs: null,
-    neck: null,
-    ring: null,
-    shield: null,
-    weapon: null,
-  }
-  return initialEquipment
-}
-
-export const generateEmptyPlayer = (name?: string): Player => ({
-  name: name ?? 'Loadout 1',
-  style: getCombatStylesForCategory(EquipmentCategory.NONE)[0],
-  skills: {
-    atk: 99,
-    def: 99,
-    hp: 99,
-    magic: 99,
-    prayer: 99,
-    ranged: 99,
-    str: 99,
-    mining: 99,
-  },
-  boosts: {
-    atk: 0,
-    def: 0,
-    hp: 0,
-    magic: 0,
-    prayer: 0,
-    ranged: 0,
-    str: 0,
-    mining: 0,
-  },
-  equipment: generateInitialEquipment(),
-  prayers: [],
-  bonuses: {
-    str: 0,
-    ranged_str: 0,
-    magic_str: 0,
-    prayer: 0,
-  },
-  defensive: {
-    stab: 0,
-    slash: 0,
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-  },
-  offensive: {
-    stab: 0,
-    slash: 0,
-    crush: 0,
-    magic: 0,
-    ranged: 0,
-  },
-  buffs: {
-    potions: [],
-    onSlayerTask: true,
-    inWilderness: false,
-    kandarinDiary: false,
-    chargeSpell: false,
-    markOfDarknessSpell: false,
-    forinthrySurge: false,
-    soulreaperStacks: 0,
-    usingSunfireRunes: false,
-  },
-  spell: null,
-})
-
-export const parseLoadoutsFromImportedData = (data: ImportableData) =>
-  data.loadouts.map((loadout, i) => {
-    // For each item, reload the most current data using the item ID to ensure we're not using stale data.
-    if (loadout.equipment) {
-      for (const [k, v] of Object.entries(loadout.equipment)) {
-        if (v === null) continue
-        let item: EquipmentPiece | undefined
-        if (Object.hasOwn(v, 'id')) {
-          item = availableEquipment.find((eq) => eq.id === v.id)
-          if (!item)
-            console.warn(
-              `[parseLoadoutsFromImportedData] No item found for item ID ${v.id}`,
-            )
-        }
-        // The following line will remove the item entirely if it seems to no longer exist.
-        loadout.equipment[k as keyof typeof loadout.equipment] = item || null
-      }
-    }
-
-    // load the current spell, if applicable
-    if (loadout.spell?.name) {
-      loadout.spell = spellByName(loadout.spell.name)
-    }
-
-    return { name: `Loadout ${i + 1}`, ...loadout }
-  })
-
-class GlobalState implements State {
+export class GlobalState implements State {
   monster: Monster = {
     id: 415,
     name: 'Abyssal demon',
@@ -242,6 +137,7 @@ class GlobalState implements State {
       },
     ],
   }
+
 
   private calcWorker!: CalcWorker
 
@@ -404,7 +300,6 @@ class GlobalState implements State {
         .catch(() => { })
     })
   }
-
   setCalcWorker(worker: CalcWorker) {
     if (this.calcWorker) {
       console.warn('[GlobalState] CalcWorker is already set!')
@@ -767,7 +662,7 @@ class GlobalState implements State {
       return
     }
 
-    this.loadouts = this.loadouts.filter((p, i) => i !== ix)
+    this.loadouts = this.loadouts.filter((_, i) => i !== ix)
     // If the selected loadout index is equal to or over the index we just remove, shift it down by one, else add one
     if (this.selectedLoadout >= ix && ix !== 0) {
       this.selectedLoadout -= 1
@@ -851,15 +746,3 @@ class GlobalState implements State {
   }
 }
 
-const StoreContext = createContext<GlobalState>(new GlobalState())
-
-const StoreProvider: React.FC<{
-  store: GlobalState
-  children: React.ReactNode
-}> = ({ store, children }) => (
-  <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
-)
-
-const useStore = () => useContext(StoreContext)
-
-export { GlobalState, StoreProvider, useStore }
