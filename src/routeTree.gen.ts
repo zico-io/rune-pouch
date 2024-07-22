@@ -13,11 +13,6 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as DpsImport } from './routes/dps'
 import { Route as IndexImport } from './routes/index'
-import { Route as DpsSkillsImport } from './routes/dps/skills'
-import { Route as DpsSettingsImport } from './routes/dps/settings'
-import { Route as DpsPrayersImport } from './routes/dps/prayers'
-import { Route as DpsEquipmentImport } from './routes/dps/equipment'
-import { Route as DpsCombatImport } from './routes/dps/combat'
 
 // Create/Update Routes
 
@@ -29,31 +24,6 @@ const DpsRoute = DpsImport.update({
 const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
-} as any)
-
-const DpsSkillsRoute = DpsSkillsImport.update({
-  path: '/skills',
-  getParentRoute: () => DpsRoute,
-} as any)
-
-const DpsSettingsRoute = DpsSettingsImport.update({
-  path: '/settings',
-  getParentRoute: () => DpsRoute,
-} as any)
-
-const DpsPrayersRoute = DpsPrayersImport.update({
-  path: '/prayers',
-  getParentRoute: () => DpsRoute,
-} as any)
-
-const DpsEquipmentRoute = DpsEquipmentImport.update({
-  path: '/equipment',
-  getParentRoute: () => DpsRoute,
-} as any)
-
-const DpsCombatRoute = DpsCombatImport.update({
-  path: '/combat',
-  getParentRoute: () => DpsRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -74,56 +44,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DpsImport
       parentRoute: typeof rootRoute
     }
-    '/dps/combat': {
-      id: '/dps/combat'
-      path: '/combat'
-      fullPath: '/dps/combat'
-      preLoaderRoute: typeof DpsCombatImport
-      parentRoute: typeof DpsImport
-    }
-    '/dps/equipment': {
-      id: '/dps/equipment'
-      path: '/equipment'
-      fullPath: '/dps/equipment'
-      preLoaderRoute: typeof DpsEquipmentImport
-      parentRoute: typeof DpsImport
-    }
-    '/dps/prayers': {
-      id: '/dps/prayers'
-      path: '/prayers'
-      fullPath: '/dps/prayers'
-      preLoaderRoute: typeof DpsPrayersImport
-      parentRoute: typeof DpsImport
-    }
-    '/dps/settings': {
-      id: '/dps/settings'
-      path: '/settings'
-      fullPath: '/dps/settings'
-      preLoaderRoute: typeof DpsSettingsImport
-      parentRoute: typeof DpsImport
-    }
-    '/dps/skills': {
-      id: '/dps/skills'
-      path: '/skills'
-      fullPath: '/dps/skills'
-      preLoaderRoute: typeof DpsSkillsImport
-      parentRoute: typeof DpsImport
-    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({
-  IndexRoute,
-  DpsRoute: DpsRoute.addChildren({
-    DpsCombatRoute,
-    DpsEquipmentRoute,
-    DpsPrayersRoute,
-    DpsSettingsRoute,
-    DpsSkillsRoute,
-  }),
-})
+export const routeTree = rootRoute.addChildren({ IndexRoute, DpsRoute })
 
 /* prettier-ignore-end */
 
@@ -141,34 +67,7 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "index.tsx"
     },
     "/dps": {
-      "filePath": "dps.tsx",
-      "children": [
-        "/dps/combat",
-        "/dps/equipment",
-        "/dps/prayers",
-        "/dps/settings",
-        "/dps/skills"
-      ]
-    },
-    "/dps/combat": {
-      "filePath": "dps/combat.tsx",
-      "parent": "/dps"
-    },
-    "/dps/equipment": {
-      "filePath": "dps/equipment.tsx",
-      "parent": "/dps"
-    },
-    "/dps/prayers": {
-      "filePath": "dps/prayers.tsx",
-      "parent": "/dps"
-    },
-    "/dps/settings": {
-      "filePath": "dps/settings.tsx",
-      "parent": "/dps"
-    },
-    "/dps/skills": {
-      "filePath": "dps/skills.tsx",
-      "parent": "/dps"
+      "filePath": "dps.tsx"
     }
   }
 }
