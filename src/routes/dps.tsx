@@ -9,11 +9,11 @@ export const Route = createFileRoute('/dps')({
   component: () => {
     return (
       <Container fixed sx={{ overflow: 'hidden' }}>
-        <Grid container spacing={1}>
-          <Grid xs={4} sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Grid container spacing={1} sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Grid xs={4}>
             <PlayerPanel />
           </Grid>
-          <Grid xs={8} sx={{ height: '100vh', overflowY: 'scroll', scrollbarWidth: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Grid xs={8}>
             <Stack spacing={1}>
               <MonsterPanel />
               <CalculationsPanel />
