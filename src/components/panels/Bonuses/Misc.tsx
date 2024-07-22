@@ -7,7 +7,6 @@ import { EquipmentBonuses } from '@/lib/Equipment'
 import { useStore } from '@/lib/state'
 import { observer } from 'mobx-react-lite'
 import { AttributeInput } from '@components/ui/AttributeInput'
-import Grid from '@mui/material/Unstable_Grid2'
 import { Stack } from '@mui/material'
 
 export const MiscBonuses: React.FC<{ computedStats?: EquipmentBonuses }> =
