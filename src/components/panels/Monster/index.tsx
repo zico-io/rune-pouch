@@ -38,7 +38,8 @@ import { GppBad } from '@mui/icons-material'
 
 export const MonsterPanel: React.FC = observer(() => {
   const store = useStore()
-  const { loadouts, monster } = store
+  // const { loadouts, monster } = store
+  const { monster } = store
 
   const isCustomMonster = store.monster.id === -1
 

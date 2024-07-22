@@ -1,4 +1,4 @@
-import { Box, IconButton, Paper, Stack, Typography } from '@mui/material'
+import { IconButton, Paper, Stack } from '@mui/material'
 import { EquipmentPanel } from '../Equipment'
 import { CombatPanel } from '../Combat'
 import { SkillsPanel } from '../Skills'
@@ -85,19 +85,15 @@ const Tab = styled(BaseTab)`
   }
 `
 
-const TabPanel = styled(BaseTabPanel)(
-  ({ theme }) => `
+const TabPanel = styled(BaseTabPanel)`
     padding: 12px;
     margin-top: 8px;
-  `,
-)
+  `
 
-const TabsList = styled(BaseTabsList)(
-  ({ theme }) => `
+const TabsList = styled(BaseTabsList)`
     background-color: '#1c1c1c';
     padding: 4px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
-  `,
-);
+  `

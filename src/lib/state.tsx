@@ -401,7 +401,7 @@ class GlobalState implements State {
       // Save their application state to browser storage
       localforage
         .setItem('dps-calc-state', toJS(this.asImportableData))
-        .catch(() => {})
+        .catch(() => { })
     })
   }
 
@@ -496,9 +496,9 @@ class GlobalState implements State {
         if (
           v !== undefined &&
           v !==
-            INITIAL_MONSTER_INPUTS.defenceReductions[
-              k as keyof typeof INITIAL_MONSTER_INPUTS.defenceReductions
-            ]
+          INITIAL_MONSTER_INPUTS.defenceReductions[
+          k as keyof typeof INITIAL_MONSTER_INPUTS.defenceReductions
+          ]
         ) {
           this.updateUIState({ isDefensiveReductionsExpanded: true })
           break
@@ -573,7 +573,6 @@ class GlobalState implements State {
     localforage.setItem('dps-calc-prefs', toJS(this.prefs)).catch((e) => {
       console.error(e)
       // TODO something that isn't this
-      // eslint-disable-next-line no-alert
       alert(
         'Could not persist preferences to browser. Make sure our site has permission to do this.',
       )
