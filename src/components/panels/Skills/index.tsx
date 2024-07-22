@@ -19,8 +19,8 @@ import {
 import Grid from '@mui/material/Unstable_Grid2'
 import { Stack } from '@mui/material'
 import { PlayerSkillsInput } from './Input'
+import { BuffItem } from './Buffs'
 import { PotionMap } from '@/lib/utils'
-import { BuffItem } from '../buffs/Item'
 import Potion from '@/enums/Potion'
 
 const ITEM_HEIGHT = 48
