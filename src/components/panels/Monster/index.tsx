@@ -27,7 +27,7 @@ import { Stack } from '@mui/system'
 import { AttributesPanel } from './AttributesPanel'
 import { AttributeInput } from '@components/ui/AttributeInput'
 import { observer } from 'mobx-react-lite'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import { useMemo } from 'react'
 import { toJS } from 'mobx'
 import { scaleMonster } from '@/lib/MonsterScaling'
@@ -38,7 +38,8 @@ import { GppBad } from '@mui/icons-material'
 
 export const MonsterPanel: React.FC = observer(() => {
   const store = useStore()
-  const { loadouts, monster } = store
+  // const { loadouts, monster } = store
+  const { monster } = store
 
   const isCustomMonster = store.monster.id === -1
 

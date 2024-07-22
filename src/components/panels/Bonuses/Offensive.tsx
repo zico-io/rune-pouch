@@ -5,7 +5,7 @@ import magic from '/img/bonuses/magic.png'
 import ranged from '/img/bonuses/ranged.png'
 
 import { EquipmentBonuses } from '@/lib/Equipment'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import { observer } from 'mobx-react-lite'
 import { AttributeInput } from '@components/ui/AttributeInput'
 import { Stack } from '@mui/material'

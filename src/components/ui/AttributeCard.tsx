@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Stack } from "@mui/material";
+import { Card, CardContent, CardHeader } from "@mui/material";
 
 interface AttributeCardProps {
   title: string,

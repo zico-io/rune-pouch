@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import { observer } from 'mobx-react-lite'
 import { getCdnImage } from '@/lib/utils'
 import { EquipmentPiece } from '@/types/Player'

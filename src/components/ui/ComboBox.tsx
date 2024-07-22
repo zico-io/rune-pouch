@@ -10,7 +10,7 @@ import { VariableSizeList, ListChildComponentProps } from 'react-window'
 
 const LISTBOX_PADDING = 8
 
-function useResetCache(data: any) {
+function useResetCache(data: VariableSizeList) {
   const ref = React.useRef<VariableSizeList>(null)
   React.useEffect(() => {
     if (ref.current != null) {
@@ -68,7 +68,7 @@ interface IComboboxProps<T> {
   value?: string
   items: T[]
   placeholder?: string
-  onSelectedItemChange: any
+  onSelectedItemChange: () => void
   CustomItemComponent?: React.FC<{ item: T; itemString: string }>
 }
 
@@ -117,12 +117,12 @@ const ListboxComponent = React.forwardRef<
 >(function ListboxComponent(props, ref) {
   const { children, ...other } = props
   const itemData: React.ReactElement[] = []
-  ;(children as React.ReactElement[]).forEach(
-    (item: React.ReactElement & { children?: React.ReactElement[] }) => {
-      itemData.push(item)
-      itemData.push(...(item.children || []))
-    },
-  )
+    ; (children as React.ReactElement[]).forEach(
+      (item: React.ReactElement & { children?: React.ReactElement[] }) => {
+        itemData.push(item)
+        itemData.push(...(item.children || []))
+      },
+    )
 
   const theme = useTheme()
   const smUp = useMediaQuery(theme.breakpoints.up('sm'), {
@@ -132,6 +132,8 @@ const ListboxComponent = React.forwardRef<
   const itemSize = smUp ? 36 : 48
 
   const getChildSize = (child: React.ReactElement) => {
+    // TODO: Fix eslint compliance
+    // eslint-disable-next-line no-prototype-builtins
     if (child.hasOwnProperty('group')) return 48
     return itemSize
   }

@@ -4,7 +4,7 @@ import magicStrength from '/img/bonuses/magic_strength.png'
 import prayer from '/img/tabs/prayer.png'
 
 import { EquipmentBonuses } from '@/lib/Equipment'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import { observer } from 'mobx-react-lite'
 import { AttributeInput } from '@components/ui/AttributeInput'
 import { Stack } from '@mui/material'

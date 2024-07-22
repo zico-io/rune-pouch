@@ -3,7 +3,7 @@ import isEqual from 'lodash.isequal'
 import { PlayerCombatStyle } from '@/types/PlayerCombatStyle'
 import { observer } from 'mobx-react-lite'
 import { useEffect, useState } from 'react'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import { EquipmentCategory } from '@/enums/EquipmentCategory'
 import { CombatStyleMap } from '@/lib/utils'
 import { Box, Button, Stack, Typography } from '@mui/material'
@@ -27,7 +27,7 @@ export const CombatStyle: React.FC<CombatStyleProps> = observer((props) => {
     const getStyleImage = async () => {
       let path =
         CombatStyleMap[
-          store.equipmentData.weapon?.category || EquipmentCategory.NONE
+        store.equipmentData.weapon?.category || EquipmentCategory.NONE
         ][style.name]
 
       if (style.type === 'magic' && style.stance === 'Defensive Autocast')
