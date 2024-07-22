@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Container, Stack } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { CalculationsPanel } from '@/components/panels/Calculations'
-import PlayerPanel from '@/components/panels/Player'
+import { PlayerPanel } from '@/components/panels/Player'
 import { MonsterPanel } from '@/components/panels/Monster'
 
 export const Route = createFileRoute('/dps')({

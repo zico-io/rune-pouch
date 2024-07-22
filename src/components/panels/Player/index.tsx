@@ -1,6 +1,6 @@
 import { Paper, Stack } from '@mui/material'
 import { EquipmentPanel } from '../Equipment'
-import { CombatPanel } from './combat'
+import { CombatPanel } from '../Combat'
 import { SkillsPanel } from '../Skills'
 import { BonusesPanel } from '../Bonuses'
 import { PrayersPanel } from '../Prayer'
