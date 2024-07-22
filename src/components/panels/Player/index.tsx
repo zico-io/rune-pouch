@@ -1,4 +1,4 @@
-import { Paper, Stack } from '@mui/material'
+import { Box, IconButton, Paper, Stack, Typography } from '@mui/material'
 import { EquipmentPanel } from '../Equipment'
 import { CombatPanel } from '../Combat'
 import { SkillsPanel } from '../Skills'
@@ -12,6 +12,7 @@ import { buttonClasses } from "@mui/base/Button"
 import { TabPanel as BaseTabPanel } from "@mui/base"
 import { TabsList as BaseTabsList } from "@mui/base"
 import { styled } from '@mui/system'
+import { GitHub } from '@mui/icons-material'
 
 export const PlayerPanel = () => {
   return (
@@ -43,6 +44,11 @@ export const PlayerPanel = () => {
         <TabItem icon="Prayer_icon" value={3} />
         <TabItem icon="Settings" value={4} />
       </TabsList>
+      <Stack direction="row" spacing={0.5} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.2 }}>
+        <IconButton onClick={() => window.open("https://github.com/zico-io/rune-pouch")}>
+          <GitHub />
+        </IconButton>
+      </Stack>
     </Tabs>
   )
 }
