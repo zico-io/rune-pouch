@@ -1,19 +1,12 @@
 import { KeyboardArrowDown } from '@mui/icons-material'
-import { Button, Card, CardContent, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
+import { Button, Card, CardContent, Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material'
 
 export const CalculationsPanel = () => {
   return (
-    <Card>
-      <CardContent>
-        <Typography variant='h6' gutterBottom>Calculations</Typography>
-        <TableContainer sx={{ borderRadius: 2 }}>
-          <Table stickyHeader size="small">
-            <TableHead>
-              <TableRow>
-                <TableCell />
-                <TableCell align="center">Loadout 1</TableCell>
-              </TableRow>
-            </TableHead>
+    <TableContainer sx={{ borderRadius: 1 }}>
+      <Card>
+        <CardContent>
+          <Table>
             <TableBody>
               <TableRow>
                 <TableCell sx={{ maxWidth: 8, overflow: 'hidden' }} variant="head">Max Hit</TableCell>
@@ -37,10 +30,10 @@ export const CalculationsPanel = () => {
               </TableRow>
             </TableBody>
           </Table>
-          <Button startIcon={<KeyboardArrowDown />} endIcon={<KeyboardArrowDown />} fullWidth>Show More</Button>
-        </TableContainer>
-      </CardContent>
-    </Card >
+        </CardContent>
+      </Card>
+      <Button disabled sx={{ backgroundColor: '#1c1c1c' }} startIcon={<KeyboardArrowDown />} endIcon={<KeyboardArrowDown />} fullWidth>Show More</Button>
+    </TableContainer>
   )
 }
 
