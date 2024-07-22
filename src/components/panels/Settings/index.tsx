@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import Grid from '@mui/material/Unstable_Grid2'
 import { FormControlLabel, FormGroup, Switch, Typography } from '@mui/material'
 import { NumberInput } from '@components/ui/NumberInput'

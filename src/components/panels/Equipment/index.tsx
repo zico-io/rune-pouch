@@ -3,7 +3,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Dialog
 import Grid from '@mui/material/Unstable_Grid2'
 import { EquipmentGrid } from "../Player/equipment/Grid"
 import EquipmentSelect from "../Player/equipment/Select"
-import { useStore } from "@/lib/state"
+import { useStore } from "@/lib/State"
 import { useState } from "react"
 
 export const EquipmentPanel = () => {

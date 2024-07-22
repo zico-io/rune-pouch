@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { Prayer, PrayerMap } from '@/enums/Prayer'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import Grid from '@mui/material/Unstable_Grid2'
 import { GridItem } from '@components/ui/GridItem'
 import { Box } from '@mui/material'

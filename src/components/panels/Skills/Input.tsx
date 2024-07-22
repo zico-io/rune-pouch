@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { PlayerSkills } from '@/types/Player'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import { useId } from 'react'
 import { Image } from 'mui-image'
 import { Box, Paper, Stack, TextField, Typography } from '@mui/material'

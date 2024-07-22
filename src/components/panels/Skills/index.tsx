@@ -8,7 +8,7 @@ import prayer from '/img/tabs/prayer.png'
 import mining from '/img/bonuses/mining.png'
 
 import { observer } from 'mobx-react-lite'
-import { useStore } from '@/lib/state'
+import { useStore } from '@/lib/State'
 import {
   Box,
   FormControl,
